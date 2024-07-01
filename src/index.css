@@ -1,0 +1,366 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.round {
+  background-color: rgb(220, 214, 214);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    to right,
+    rgb(255, 255, 255) 20%,
+    rgb(255, 255, 255) 90%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.change1 {
+  background-color: white;
+  color: black;
+}
+
+.change2 {
+  color: black;
+}
+
+.change3 {
+  margin-top: 0%;
+  margin-bottom: 0%;
+  gap: 0px;
+}
+
+.h-cover {
+  @apply min-h-[calc(100vh-80px)];
+}
+
+.main {
+  border-color: rgb(222, 217, 217);
+}
+
+.btn-light {
+  @apply bg-red-100 text-red-600 rounded-full py-2 px-5 md:font-normal ml-1;
+}
+
+.btn-dark {
+  @apply whitespace-nowrap bg-red-600 text-white rounded-full py-2 px-5 capitalize bg-opacity-80;
+}
+
+.btn-dark:hover {
+  background-color: red;
+}
+
+.link {
+  @apply text-red-600 text-black bg-white rounded-md opacity-75 hover:bg-slate-100;
+}
+
+.line {
+  border-color: grey;
+}
+
+.navbar {
+  @apply z-10 sticky top-0 flex items-center gap-12 w-full px-[5vw] py-5 h-[80px] border-b bg-slate-500;
+}
+
+.navbar1 {
+  background-color: #ffffff;
+}
+
+.show {
+  @apply opacity-100 pointer-events-auto;
+}
+
+.hide {
+  @apply opacity-0 pointer-events-none duration-100;
+}
+
+@layer components {
+  * {
+    @apply m-0 p-0 box-border text-base duration-100;
+  }
+
+  html {
+    @apply overflow-x-hidden;
+  }
+
+  body {
+    @apply font-normal text-black;
+  }
+
+  i {
+    @apply mt-0.5;
+  }
+
+  section {
+    @apply py-4 px-[5vw] md:px-[7vw] lg:px-[10vw];
+  }
+
+  img {
+    @apply w-full h-full object-cover;
+  }
+
+  .center {
+    @apply block mx-auto;
+  }
+
+  .input-box {
+    @apply w-[100%] rounded-md p-4 bg-gray-100 pl-12 border border-red-200 focus:bg-transparent focus:border-red-400 placeholder:text-black;
+  }
+
+  input:disabled,
+  input:disabled ~ .input-icon {
+    @apply opacity-50;
+  }
+
+  .input-icon {
+    @apply absolute left-4 top-1/2 -translate-y-1/2;
+  }
+
+  .link {
+    @apply text-black bg-red-200 p-3 px-4 block opacity-75;
+  }
+
+  .sidebar-link {
+    @apply flex gap-4 items-center py-5 text-red-500;
+  }
+
+  .sidebar-link.active {
+    @apply text-black border-r-2 border-red-400 pl-6 bg-red-100 -ml-6 md:rounded-tl-lg md:rounded-bl-lg max-md:border-none;
+  }
+
+  #textEditor h2,
+  h2 {
+    @apply text-4xl leading-normal font-bold max-md:text-3xl max-md:leading-snug !important;
+  }
+
+  #textEditor h3,
+  h3 {
+    @apply text-3xl leading-loose max-md:text-2xl max-md:leading-normal !important;
+  }
+
+  #textEditor *,
+  .blog-page-content * {
+    @apply text-xl leading-10 md:text-2xl;
+  }
+
+  #textEditor a,
+  .blog-page-content a {
+    @apply text-red-400 underline opacity-50;
+  }
+
+  .tag {
+    @apply p-3 bg-red-200 rounded-full px-6 capitalize;
+  }
+
+  .blog-title {
+    @apply text-xl font-medium leading-7 line-clamp-3 sm:line-clamp-2;
+  }
+
+  .blog-index {
+    @apply text-4xl sm:text-3xl lg:text-5xl font-bold leading-none text-red-200;
+  }
+}
+
+.ce-block__content,
+.ce-toolbar__content {
+  max-width: 900px;
+}
+
+.cdx-settings-button[data-tune="withBorder"],
+.cdx-settings-button[data-tune="withBackground"],
+.cdx-settings-button[data-tune="stretched"] {
+  display: none;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  color: rgb(239, 102, 102);
+  text-decoration: none;
+  padding: 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #f3f4f6;
+}
+
+.sidebar-link i {
+  margin-right: 8px;
+}
+
+.sidebar-link.active {
+  background-color: #f3f4f6;
+}
+
+.side-navbar-container {
+  background-color: #fff;
+  border-right: 1px solid #e5e7eb;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.side-navbar-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.side-navbar-divider {
+  border-top: 1px solid #000000;
+  margin: 1rem 0;
+}
+
+.side-navbar {
+  padding: 1rem;
+}
+
+.manage1 {
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .side-navbar {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 80%;
+    max-width: 300px;
+    height: calc(100vh - 4rem);
+    overflow-y: auto;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .side-navbar.open {
+    transform: translateX(0);
+  }
+}
+.btn {
+  background-color: white;
+  color: black;
+  border-radius: 9999px; /* Fully rounded */
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  border: none; /* No border */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.h1style {
+  font-family: 'Arial Black', sans-serif;
+  font-weight: bold;
+  font-size: xx-large;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, rgb(56, 62, 62), rgb(76, 249, 46), rgb(2, 4, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 1rem; /* Adding padding to emphasize background */
+  border-radius: 0.5rem; /* Rounded corners for visual appeal */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); Adding a subtle shadow */
+}
+.custom-link {
+  /* Fallback: Set a background color. */
+  background-color: #6c36d8;
+  
+  /* Create the gradient. */
+  background-image: linear-gradient(
+    45deg,
+    #0a4234 50%,
+    #f2cfed 50%
+  );
+  
+  /* Set the background size and repeat properties. */
+  background-size: 270%;
+  background-repeat: repeat;
+  background-position: top right;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+
+  animation: button-animation 0.65s 0.15s ease-out forwards;
+}
+
+.custom-link:hover, .custom-link:hover span {
+  animation: button-animation-rev 0.65s ease-out forwards;
+}
+
+.custom-link:hover {
+  box-shadow: 3px 2px 10px 1px rgba(0,0,0,0.15);
+  transition: 0.5s;
+}
+
+@keyframes button-animation {
+  0% {
+    background-position: top right;
+  }
+  100% {
+    background-position: top left;
+  }
+}
+
+@keyframes button-animation-rev {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+
+/* Style the rest of the page. */
+body {
+  background-color: #fcfdfc;
+}
+
+.custom-link {
+  margin-top: 2em;
+  margin-top: calc(10px - 1em);
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(45deg, #0b050b 50%, #7be22b 50%);
+  background-size: 270%;
+  background-repeat: repeat;
+  background-position: top right;
+  animation: button-animation 0.65s 0.15s ease-out forwards;
+  display: table;
+  border-radius: 0.5em;
+  text-decoration: none;
+  box-shadow: 7px 4px 20px 1px rgba(0,0,0,0.15);
+  cursor: pointer;
+  padding: 1em;
+
+}
+
+.custom-link span {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  text-align: center;
+  margin-bottom: 0;
+  margin-bottom: -0.25em;
+  width: 100%;
+  padding: 0.5em 0.5em;
+}
+.notify{
+  color: rgb(20, 19, 19);
+}
+.search1{
+  color: #000000;
+}
